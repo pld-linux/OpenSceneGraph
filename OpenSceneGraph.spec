@@ -84,6 +84,8 @@ rm -rf $RPM_BUILD_ROOT
 	INST_EXAMPLES=$RPM_BUILD_ROOT%{_bindir} \
 	INST_EXAMPLE_SRC=$RPM_BUILD_ROOT%{_examplesdir}/%{name}
 
+install -d $RPM_BUILD_ROOT%{_pkgconfigdir}
+install Make/openscenegraph.pc $RPM_BUILD_ROOT%{_pkgconfigdir}
 find $RPM_BUILD_ROOT%{_examplesdir}/%{name} -name Linux??.Opt -type d |xargs rm -rf
 
 %clean
@@ -101,6 +103,7 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 %{_includedir}/osg*
+%{_pkgconfigdir}/*.pc
 
 %files examples
 %defattr(644,root,root,755)
