@@ -1,15 +1,18 @@
+%define 	fversion	%(echo %{version} |tr r -)
 Summary:	Open Scene Graph - real-time visualization library
 Summary(pl):	Open Scene Graph - biblioteka do wizualizacji
 Name:		OpenSceneGraph
-Version:	0.9.3
+Version:	0.9.6r2
 Release:	1
-License:	LGPL
+License:	OpenSceneGraph Public Licence (based on LGPL with exceptions)
 Group:		X11/Libraries
-Source0:	http://openscenegraph.org/download/snapshots/%{name}-%{version}.tar.gz
-# Source0-md5:	a6e2193e7c5b9b650a71f25cea326994
+Source0:	http://dl.sourceforge.net/openscenegraph/%{name}-%{fversion}.tar.gz
+# Source0-md5:	7023c86478aa85ce2da3e16332f01f32
 Source1:	http://openscenegraph.org/download/dox/osg-doxygen-0.9.1.tar.gz
 # Source1-md5:	7e6d785d1b763aaeae03c2dc4c148805
 URL:		http://openscenegraph.org/
+BuildRequires:	OpenThreads-devel
+BuildRequires:	Producer-devel
 BuildRequires:	freetype-devel
 BuildRequires:	freetype1-devel
 BuildRequires:	libjpeg-devel
@@ -65,22 +68,22 @@ Przyk³ady dla biblioteki Open Scene Graph.
 #Wtyczki dla biblioteki Open Scene Graph.
 
 %prep
-%setup -q
+%setup -q -n %{name}-%{fversion}
 
 %build
-%{__make} \
-	CC="%{__cc}" \
-	CXX="%{__cxx}" \
-	INC="-I/usr/X11R6/include -I/usr/include/freetype2"
+%{__make} -f GNUmakefile \
+	CC="%{__cc} %{rpmcflags}" \
+	CXX="%{__cxx} %{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%{__make} \
-	INST_SYS_PREFIX=$RPM_BUILD_ROOT%{_prefix} \
-	INST_SHARE_PREFIX=$RPM_BUILD_ROOT%{_datadir} \
-	INST_SRC=$RPM_BUILD_ROOT%{_examplesdir}/%{name} \
-	INST_DEMOS=$RPM_BUILD_ROOT%{_examplesdir}/%{name} \
-	install
+%{__make} -f GNUmakefile install \
+	INST_LOCATION=$RPM_BUILD_ROOT%{_prefix} \
+	INST_SHARE_PREFIX=$RPM_BUILD_ROOT%{_prefix} \
+	INST_EXAMPLES=$RPM_BUILD_ROOT%{_bindir} \
+	INST_EXAMPLE_SRC=$RPM_BUILD_ROOT%{_examplesdir}/%{name}
+
+find $RPM_BUILD_ROOT%{_examplesdir}/%{name} -name Linux??.Opt -type d |xargs rm -rf
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -96,11 +99,9 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
-%attr(644,root,root) %{_includedir}/osg*
+%{_includedir}/osg*
 
 %files examples
 %defattr(644,root,root,755)
-%dir %{_examplesdir}/%{name}
-%{_examplesdir}/%{name}/Make
-%{_examplesdir}/%{name}/demos
-%attr(755,root,root) %{_examplesdir}/%{name}/osg*
+%attr(755,root,root) %{_bindir}/*
+%{_examplesdir}/%{name}
