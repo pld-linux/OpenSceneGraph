@@ -20,7 +20,7 @@ BuildRequires:	zlib-devel
 Buildroot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-The Open Scene Graph is a cross-platform C++/OpenGL library for 
+The Open Scene Graph is a cross-platform C++/OpenGL library for
 the real-time visualization.
 
 %description -l pl
@@ -28,19 +28,19 @@ Open Scene Graph to wieloplatformowa oparta o C++ i OpenGL biblioteka
 do wizualizacji w czasie rzeczywistym.
 
 %package devel
-Summary:	Header files for Open Scene Graph 
+Summary:	Header files for Open Scene Graph
 Summary(pl):	Pliki nag³ówkowe dla Open Scene Graph
 Group:		Development/Libraries
 Requires:	%{name} = %{version}
 
-%description devel 
+%description devel
 Headers file for OSD library.
 
 %description devel -l pl
 Pliki nag³ówkowe dla biblioteki Open Scene Graph.
 
 %package examples
-Summary:	Examples for Open Scene Graph 
+Summary:	Examples for Open Scene Graph
 Summary(pl):	Przyk³ady dla Open Scene Graph
 Group:		Development/Libraries
 Requires:	%{name} = %{version}
@@ -53,7 +53,7 @@ Przyk³ady dla biblioteki Open Scene Graph.
 
 # no such package (yet?)
 #%package plugin
-#Summary:	Plugins for Open Scene Graph 
+#Summary:	Plugins for Open Scene Graph
 #Summary(pl):	Wtyczki dla biblioteki Open Scene Graph
 #Group:		Libraries
 #Requires:	%{name} = %{version}
