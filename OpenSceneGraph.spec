@@ -1,14 +1,15 @@
-%define 	fversion	%(echo %{version} |tr r -)
+%define		_snap	20050228
+%define		_snap_time	2325
 Summary:	Open Scene Graph - real-time visualization library
 Summary(pl):	Open Scene Graph - biblioteka do wizualizacji
 Name:		OpenSceneGraph
-Version:	0.9.6r2
-Release:	1
+Version:	0.9.8
+Release:	0.%{_snap}.1
 License:	OpenSceneGraph Public Licence (based on LGPL with exceptions)
 Group:		X11/Libraries
-Source0:	http://dl.sourceforge.net/openscenegraph/%{name}-%{fversion}.tar.gz
-# Source0-md5:	7023c86478aa85ce2da3e16332f01f32
-Source1:	http://openscenegraph.org/download/dox/osg-doxygen-0.9.1.tar.gz
+Source0:	http://openscenegraph.org/downloads/developer/%{name}-%{version}-%{_snap}%{_snap_time}.tar.gz
+# Source0-md5:	13f0198d1a8a13707c25fd9ecdec9da2
+Source1:	osg-doxygen-0.9.1.tar.gz
 # Source1-md5:	7e6d785d1b763aaeae03c2dc4c148805
 URL:		http://openscenegraph.org/
 BuildRequires:	OpenThreads-devel
@@ -68,7 +69,7 @@ Przyk³ady dla biblioteki Open Scene Graph.
 #Wtyczki dla biblioteki Open Scene Graph.
 
 %prep
-%setup -q -n %{name}-%{fversion}
+%setup -q -n %{name}-%{version}-%{_snap}%{_snap_time}
 
 %build
 %{__make} -f GNUmakefile \
