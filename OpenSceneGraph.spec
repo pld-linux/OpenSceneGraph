@@ -6,7 +6,9 @@ Release:	1
 License:	LGPL
 Group:		X11/Libraries
 Source0:	http://openscenegraph.org/download/snapshots/%{name}-%{version}.tar.gz
+# Source0-md5:	a6e2193e7c5b9b650a71f25cea326994
 Source1:	http://openscenegraph.org/download/dox/osg-doxygen-0.9.1.tar.gz
+# Source1-md5:	7e6d785d1b763aaeae03c2dc4c148805
 URL:		http://openscenegraph.org/
 BuildRequires:	freetype-devel
 BuildRequires:	freetype1-devel
