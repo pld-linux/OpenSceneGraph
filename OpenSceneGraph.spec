@@ -10,7 +10,7 @@ Source1:	http://openscenegraph.org/download/dox/osg-doxygen-0.9.1.tar.gz
 URL:		http://openscenegraph.org/
 BuildRequires:	libtiff-devel
 BuildRequires:	freetype-devel
-BuildRequires:	freetype1-devel >= 1.3.1-10
+BuildRequires:	freetype1-devel
 BuildRequires:	libpng-devel
 BuildRequires:	libungif-devel
 BuildRequires:	libjpeg-devel
