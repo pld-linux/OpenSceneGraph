@@ -1,7 +1,7 @@
 Summary:	Open Scene Graph - real-time visualization library
 Summary(pl):	Open Scene Graph - biblioteka do wizualizacji
 Name:		OpenSceneGraph
-Version:	0.9.2
+Version:	0.9.3
 Release:	1
 Copyright:	LGPL
 Group:		X11/Graphics
