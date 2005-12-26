@@ -35,7 +35,7 @@ do wizualizacji w czasie rzeczywistym.
 Summary:	Header files for Open Scene Graph
 Summary(pl):	Pliki nag³ówkowe dla Open Scene Graph
 Group:		Development/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Headers file for OSD library.
@@ -47,7 +47,7 @@ Pliki nag³ówkowe dla biblioteki Open Scene Graph.
 Summary:	Examples for Open Scene Graph
 Summary(pl):	Przyk³ady dla Open Scene Graph
 Group:		Development/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description examples
 Examples for Open Scene Graph Library.
@@ -60,7 +60,7 @@ Przyk³ady dla biblioteki Open Scene Graph.
 #Summary:	Plugins for Open Scene Graph
 #Summary(pl):	Wtyczki dla biblioteki Open Scene Graph
 #Group:		Libraries
-#Requires:	%{name} = %{version}
+#Requires:	%{name} = %{version}-%{release}
 #
 #%description plugin
 #Plugins for Open Scene Graph library.
@@ -82,11 +82,11 @@ rm -rf $RPM_BUILD_ROOT
 	INST_LOCATION=$RPM_BUILD_ROOT%{_prefix} \
 	INST_SHARE_PREFIX=$RPM_BUILD_ROOT%{_prefix} \
 	INST_EXAMPLES=$RPM_BUILD_ROOT%{_bindir} \
-	INST_EXAMPLE_SRC=$RPM_BUILD_ROOT%{_examplesdir}/%{name}
+	INST_EXAMPLE_SRC=$RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 install -d $RPM_BUILD_ROOT%{_pkgconfigdir}
 install Make/openscenegraph.pc $RPM_BUILD_ROOT%{_pkgconfigdir}
-find $RPM_BUILD_ROOT%{_examplesdir}/%{name} -name Linux??.Opt -type d |xargs rm -rf
+find $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version} -name Linux??.Opt -type d |xargs rm -rf
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -108,4 +108,4 @@ rm -rf $RPM_BUILD_ROOT
 %files examples
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/*
-%{_examplesdir}/%{name}
+%{_examplesdir}/%{name}-%{version}
