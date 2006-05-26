@@ -16,10 +16,10 @@ BuildRequires:	OpenThreads-devel
 BuildRequires:	Producer-devel
 BuildRequires:	freetype-devel
 BuildRequires:	freetype1-devel
+BuildRequires:	giflib-devel
 BuildRequires:	libjpeg-devel
 BuildRequires:	libpng-devel
 BuildRequires:	libtiff-devel
-BuildRequires:	libungif-devel
 BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
