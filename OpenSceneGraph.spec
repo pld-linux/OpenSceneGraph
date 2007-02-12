@@ -1,7 +1,7 @@
 %define		_snap	20050228
 %define		_snap_time	2325
 Summary:	Open Scene Graph - real-time visualization library
-Summary(pl):	Open Scene Graph - biblioteka do wizualizacji
+Summary(pl.UTF-8):   Open Scene Graph - biblioteka do wizualizacji
 Name:		OpenSceneGraph
 Version:	0.9.8
 Release:	0.%{_snap}.1
@@ -27,33 +27,33 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 The Open Scene Graph is a cross-platform C++/OpenGL library for
 the real-time visualization.
 
-%description -l pl
+%description -l pl.UTF-8
 Open Scene Graph to wieloplatformowa oparta o C++ i OpenGL biblioteka
 do wizualizacji w czasie rzeczywistym.
 
 %package devel
 Summary:	Header files for Open Scene Graph
-Summary(pl):	Pliki nag³ówkowe dla Open Scene Graph
+Summary(pl.UTF-8):   Pliki nagÅ‚Ã³wkowe dla Open Scene Graph
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Headers file for OSD library.
 
-%description devel -l pl
-Pliki nag³ówkowe dla biblioteki Open Scene Graph.
+%description devel -l pl.UTF-8
+Pliki nagÅ‚Ã³wkowe dla biblioteki Open Scene Graph.
 
 %package examples
 Summary:	Examples for Open Scene Graph
-Summary(pl):	Przyk³ady dla Open Scene Graph
+Summary(pl.UTF-8):   PrzykÅ‚ady dla Open Scene Graph
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description examples
 Examples for Open Scene Graph Library.
 
-%description examples -l pl
-Przyk³ady dla biblioteki Open Scene Graph.
+%description examples -l pl.UTF-8
+PrzykÅ‚ady dla biblioteki Open Scene Graph.
 
 # no such package (yet?)
 #%package plugin
