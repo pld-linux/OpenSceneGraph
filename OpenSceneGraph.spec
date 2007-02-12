@@ -1,7 +1,7 @@
 %define		_snap	20050228
 %define		_snap_time	2325
 Summary:	Open Scene Graph - real-time visualization library
-Summary(pl.UTF-8):   Open Scene Graph - biblioteka do wizualizacji
+Summary(pl.UTF-8):	Open Scene Graph - biblioteka do wizualizacji
 Name:		OpenSceneGraph
 Version:	0.9.8
 Release:	0.%{_snap}.1
@@ -33,7 +33,7 @@ do wizualizacji w czasie rzeczywistym.
 
 %package devel
 Summary:	Header files for Open Scene Graph
-Summary(pl.UTF-8):   Pliki nagłówkowe dla Open Scene Graph
+Summary(pl.UTF-8):	Pliki nagłówkowe dla Open Scene Graph
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -45,7 +45,7 @@ Pliki nagłówkowe dla biblioteki Open Scene Graph.
 
 %package examples
 Summary:	Examples for Open Scene Graph
-Summary(pl.UTF-8):   Przykłady dla Open Scene Graph
+Summary(pl.UTF-8):	Przykłady dla Open Scene Graph
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
