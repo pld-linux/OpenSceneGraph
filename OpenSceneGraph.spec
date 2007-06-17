@@ -10,6 +10,7 @@ Source0:	http://www.openscenegraph.com/downloads/snapshots/%{name}-%{version}.zi
 #Source1:	osg-doxygen-0.9.1.tar.gz
 ## Source1-md5:	7e6d785d1b763aaeae03c2dc4c148805
 URL:		http://openscenegraph.org/
+BuildRequires:	cmake
 BuildRequires:	freetype-devel
 BuildRequires:	giflib-devel
 BuildRequires:	libjpeg-devel
