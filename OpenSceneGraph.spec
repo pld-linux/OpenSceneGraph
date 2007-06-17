@@ -1,21 +1,16 @@
-%define		_snap	20050228
-%define		_snap_time	2325
 Summary:	Open Scene Graph - real-time visualization library
 Summary(pl.UTF-8):	Open Scene Graph - biblioteka do wizualizacji
 Name:		OpenSceneGraph
-Version:	0.9.8
-Release:	0.%{_snap}.1
+Version:	2.0
+Release:	0.1
 License:	OpenSceneGraph Public Licence (based on LGPL with exceptions)
 Group:		X11/Libraries
-Source0:	http://openscenegraph.org/downloads/developer/%{name}-%{version}-%{_snap}%{_snap_time}.tar.gz
-# Source0-md5:	13f0198d1a8a13707c25fd9ecdec9da2
-Source1:	osg-doxygen-0.9.1.tar.gz
-# Source1-md5:	7e6d785d1b763aaeae03c2dc4c148805
+Source0:	http://www.openscenegraph.com/downloads/snapshots/%{name}-%{version}.zip
+# Source0-md5:	9e8d8311868f2acce377a6d7d69c26c2
+#Source1:	osg-doxygen-0.9.1.tar.gz
+## Source1-md5:	7e6d785d1b763aaeae03c2dc4c148805
 URL:		http://openscenegraph.org/
-BuildRequires:	OpenThreads-devel
-BuildRequires:	Producer-devel
 BuildRequires:	freetype-devel
-BuildRequires:	freetype1-devel
 BuildRequires:	giflib-devel
 BuildRequires:	libjpeg-devel
 BuildRequires:	libpng-devel
@@ -55,38 +50,35 @@ Examples for Open Scene Graph Library.
 %description examples -l pl.UTF-8
 Przykłady dla biblioteki Open Scene Graph.
 
-# no such package (yet?)
-#%package plugin
-#Summary:	Plugins for Open Scene Graph
-#Summary(pl):	Wtyczki dla biblioteki Open Scene Graph
-#Group:		Libraries
-#Requires:	%{name} = %{version}-%{release}
-#
-#%description plugin
-#Plugins for Open Scene Graph library.
-#
-#%description plugin -l pl
-#Wtyczki dla biblioteki Open Scene Graph.
+%package plugins
+Summary:	Plugins for Open Scene Graph
+Summary(pl):	Wtyczki dla biblioteki Open Scene Graph
+Group:		Libraries
+Requires:	%{name} = %{version}-%{release}
+
+%description plugins
+Plugins for Open Scene Graph library.
+
+%description plugins -l pl
+Wtyczki dla biblioteki Open Scene Graph.
 
 %prep
-%setup -q -n %{name}-%{version}-%{_snap}%{_snap_time}
+%setup -q -n OpenSceneGraph
 
 %build
-%{__make} -f GNUmakefile \
-	CC="%{__cc} %{rpmcflags}" \
-	CXX="%{__cxx} %{rpmcflags}"
+mkdir build
+cd build
+cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%{__make} -f GNUmakefile install \
-	INST_LOCATION=$RPM_BUILD_ROOT%{_prefix} \
-	INST_SHARE_PREFIX=$RPM_BUILD_ROOT%{_prefix} \
-	INST_EXAMPLES=$RPM_BUILD_ROOT%{_bindir} \
-	INST_EXAMPLE_SRC=$RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
+install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
-install -d $RPM_BUILD_ROOT%{_pkgconfigdir}
-install Make/openscenegraph.pc $RPM_BUILD_ROOT%{_pkgconfigdir}
-find $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version} -name Linux??.Opt -type d |xargs rm -rf
+cp -r examples/osg* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
+cd build
+%{__make} install \
+    DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -97,13 +89,19 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/*.so
-%dir %{_libdir}/osgPlugins
-%attr(755,root,root) %{_libdir}/osgPlugins/*
+%attr(755,root,root) %{_libdir}/*.so.*.*.*
+%{_libdir}/*.so.11
+%{_libdir}/*.so.7
+
+%files plugins
+%defattr(644,root,root,755)
+%dir %{_libdir}/osgPlugins-2.0.0
+%attr(755,root,root) %{_libdir}/osgPlugins-2.0.0/*.so
 
 %files devel
 %defattr(644,root,root,755)
 %{_includedir}/osg*
-%{_pkgconfigdir}/*.pc
+%{_includedir}/Open*
 
 %files examples
 %defattr(644,root,root,755)
