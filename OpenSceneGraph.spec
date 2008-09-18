@@ -1,12 +1,12 @@
 Summary:	Open Scene Graph - real-time visualization library
 Summary(pl.UTF-8):	Open Scene Graph - biblioteka do wizualizacji
 Name:		OpenSceneGraph
-Version:	2.0
-Release:	0.1
+Version:	2.6.0
+Release:	0.5
 License:	OpenSceneGraph Public Licence (based on LGPL with exceptions)
 Group:		X11/Libraries
-Source0:	http://www.openscenegraph.com/downloads/snapshots/%{name}-%{version}.zip
-# Source0-md5:	9e8d8311868f2acce377a6d7d69c26c2
+Source0:	http://www.openscenegraph.org/downloads/stable_releases/OpenSceneGraph-2.6/%{name}-%{version}.zip
+# Source0-md5:	b29c7383f4c5f4b42aef9fcebe4a5539
 #Source1:	osg-doxygen-0.9.1.tar.gz
 ## Source1-md5:	7e6d785d1b763aaeae03c2dc4c148805
 URL:		http://openscenegraph.org/
@@ -64,7 +64,7 @@ Plugins for Open Scene Graph library.
 Wtyczki dla biblioteki Open Scene Graph.
 
 %prep
-%setup -q -n OpenSceneGraph
+%setup -q
 
 %build
 mkdir build
@@ -89,20 +89,20 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/*.so
 %attr(755,root,root) %{_libdir}/*.so.*.*.*
 %{_libdir}/*.so.11
-%{_libdir}/*.so.7
+%{_libdir}/*.so.44
 
 %files plugins
 %defattr(644,root,root,755)
-%dir %{_libdir}/osgPlugins-2.0.0
-%attr(755,root,root) %{_libdir}/osgPlugins-2.0.0/*.so
+%dir %{_libdir}/osgPlugins-%{version}
+%attr(755,root,root) %{_libdir}/osgPlugins-%{version}/*.so
 
 %files devel
 %defattr(644,root,root,755)
 %{_includedir}/osg*
 %{_includedir}/Open*
+%attr(755,root,root) %{_libdir}/*.so
 
 %files examples
 %defattr(644,root,root,755)
