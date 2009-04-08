@@ -1,12 +1,12 @@
 Summary:	Open Scene Graph - real-time visualization library
 Summary(pl.UTF-8):	Open Scene Graph - biblioteka do wizualizacji
 Name:		OpenSceneGraph
-Version:	2.6.0
-Release:	0.5
+Version:	2.8.0
+Release:	0.1
 License:	OpenSceneGraph Public Licence (based on LGPL with exceptions)
 Group:		X11/Libraries
-Source0:	http://www.openscenegraph.org/downloads/stable_releases/OpenSceneGraph-2.6/%{name}-%{version}.zip
-# Source0-md5:	b29c7383f4c5f4b42aef9fcebe4a5539
+Source0:	http://www.openscenegraph.org/downloads/stable_releases/OpenSceneGraph-2.8/source/%{name}-%{version}.zip
+# Source0-md5:	c4c20b97274346701f6d57eab3e78bcd
 #Source1:	osg-doxygen-0.9.1.tar.gz
 ## Source1-md5:	7e6d785d1b763aaeae03c2dc4c148805
 URL:		http://openscenegraph.org/
@@ -16,6 +16,7 @@ BuildRequires:	giflib-devel
 BuildRequires:	libjpeg-devel
 BuildRequires:	libpng-devel
 BuildRequires:	libtiff-devel
+BuildRequires:	pkg-config
 BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -67,7 +68,7 @@ Wtyczki dla biblioteki Open Scene Graph.
 %setup -q
 
 %build
-mkdir build
+#mkdir build
 cd build
 cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr
 %{__make}
@@ -91,7 +92,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/*.so.*.*.*
 %{_libdir}/*.so.11
-%{_libdir}/*.so.44
+%{_libdir}/*.so.55
 
 %files plugins
 %defattr(644,root,root,755)
@@ -103,6 +104,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_includedir}/osg*
 %{_includedir}/Open*
 %attr(755,root,root) %{_libdir}/*.so
+%{_pkgconfigdir}/*.pc
 
 %files examples
 %defattr(644,root,root,755)
