@@ -68,9 +68,12 @@ Wtyczki dla biblioteki Open Scene Graph.
 %setup -q
 
 %build
-#mkdir build
+install -d build
 cd build
-cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr
+%cmake .. \
+	-DCMAKE_BUILD_TYPE=None \
+	-DCMAKE_INSTALL_PREFIX=%{_prefix} \
+	-DCMAKE_VERBOSE_MAKEFILE=ON
 %{__make}
 
 %install
@@ -90,9 +93,38 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/*.so.*.*.*
-%{_libdir}/*.so.11
-%{_libdir}/*.so.55
+%attr(755,root,root) %{_libdir}/libOpenThreads.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libOpenThreads.so.11
+%attr(755,root,root) %{_libdir}/libosg.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libosg.so.55
+%attr(755,root,root) %{_libdir}/libosgAnimation.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libosgAnimation.so.55
+%attr(755,root,root) %{_libdir}/libosgDB.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libosgDB.so.55
+%attr(755,root,root) %{_libdir}/libosgFX.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libosgFX.so.55
+%attr(755,root,root) %{_libdir}/libosgGA.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libosgGA.so.55
+%attr(755,root,root) %{_libdir}/libosgManipulator.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libosgManipulator.so.55
+%attr(755,root,root) %{_libdir}/libosgParticle.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libosgParticle.so.55
+%attr(755,root,root) %{_libdir}/libosgShadow.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libosgShadow.so.55
+%attr(755,root,root) %{_libdir}/libosgSim.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libosgSim.so.55
+%attr(755,root,root) %{_libdir}/libosgTerrain.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libosgTerrain.so.55
+%attr(755,root,root) %{_libdir}/libosgText.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libosgText.so.55
+%attr(755,root,root) %{_libdir}/libosgUtil.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libosgUtil.so.55
+%attr(755,root,root) %{_libdir}/libosgViewer.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libosgViewer.so.55
+%attr(755,root,root) %{_libdir}/libosgVolume.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libosgVolume.so.55
+%attr(755,root,root) %{_libdir}/libosgWidget.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libosgWidget.so.55
 
 %files plugins
 %defattr(644,root,root,755)
@@ -101,10 +133,26 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
+%attr(755,root,root) %{_libdir}/libOpenThreads.so
+%attr(755,root,root) %{_libdir}/libosg.so
+%attr(755,root,root) %{_libdir}/libosgAnimation.so
+%attr(755,root,root) %{_libdir}/libosgDB.so
+%attr(755,root,root) %{_libdir}/libosgFX.so
+%attr(755,root,root) %{_libdir}/libosgGA.so
+%attr(755,root,root) %{_libdir}/libosgManipulator.so
+%attr(755,root,root) %{_libdir}/libosgParticle.so
+%attr(755,root,root) %{_libdir}/libosgShadow.so
+%attr(755,root,root) %{_libdir}/libosgSim.so
+%attr(755,root,root) %{_libdir}/libosgTerrain.so
+%attr(755,root,root) %{_libdir}/libosgText.so
+%attr(755,root,root) %{_libdir}/libosgUtil.so
+%attr(755,root,root) %{_libdir}/libosgViewer.so
+%attr(755,root,root) %{_libdir}/libosgVolume.so
+%attr(755,root,root) %{_libdir}/libosgWidget.so
+%{_includedir}/OpenThreads
 %{_includedir}/osg*
-%{_includedir}/Open*
-%attr(755,root,root) %{_libdir}/*.so
-%{_pkgconfigdir}/*.pc
+%{_pkgconfigdir}/openscenegraph.pc
+%{_pkgconfigdir}/openthreads.pc
 
 %files examples
 %defattr(644,root,root,755)
