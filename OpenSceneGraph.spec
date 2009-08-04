@@ -1,12 +1,12 @@
 Summary:	Open Scene Graph - real-time visualization library
 Summary(pl.UTF-8):	Open Scene Graph - biblioteka do wizualizacji
 Name:		OpenSceneGraph
-Version:	2.8.1
+Version:	2.8.2
 Release:	0.1
 License:	OpenSceneGraph Public Licence (based on LGPL with exceptions)
 Group:		X11/Libraries
-Source0:	http://www.openscenegraph.org/downloads/stable_releases/OpenSceneGraph-%{version}/source/%{name}-%{version}.zip
-# Source0-md5:	18a8d3f01a72b6027147b3918c18c662
+Source0:	http://www.openscenegraph.org/downloads/developer_releases/%{name}-%{version}.zip
+# Source0-md5:	99d0b37f403b85b4559514b6b9849d9e
 #Source1:	osg-doxygen-0.9.1.tar.gz
 ## Source1-md5:	7e6d785d1b763aaeae03c2dc4c148805
 URL:		http://www.openscenegraph.org/projects/osg/
@@ -17,6 +17,7 @@ BuildRequires:	libjpeg-devel
 BuildRequires:	libpng-devel
 BuildRequires:	libtiff-devel
 BuildRequires:	pkgconfig
+BuildRequires:	unzip
 BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
