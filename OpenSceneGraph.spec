@@ -10,14 +10,20 @@ Source0:	http://www.openscenegraph.org/downloads/developer_releases/%{name}-%{ve
 #Source1:	osg-doxygen-0.9.1.tar.gz
 ## Source1-md5:	7e6d785d1b763aaeae03c2dc4c148805
 URL:		http://www.openscenegraph.org/projects/osg/
+BuildRequires:	cairo-devel
 BuildRequires:	cmake
 BuildRequires:	freetype-devel
 BuildRequires:	giflib-devel
+BuildRequires:	gtk+2-devel
+BuildRequires:	gtkglext-devel
 BuildRequires:	libjpeg-devel
 BuildRequires:	libpng-devel
+BuildRequires:	librsvg-devel
 BuildRequires:	libtiff-devel
 BuildRequires:	pkgconfig
+BuildRequires:	poppler-glib-devel
 BuildRequires:	unzip
+#BuildRequires:	xulrunner-devel
 BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
