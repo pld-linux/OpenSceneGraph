@@ -1,0 +1,28 @@
+--- OpenSceneGraph-2.8.2/src/osgPlugins/png/ReaderWriterPNG.cpp~	2008-07-14 00:18:59.000000000 +0200
++++ OpenSceneGraph-2.8.2/src/osgPlugins/png/ReaderWriterPNG.cpp	2010-03-01 12:57:05.720365671 +0100
+@@ -173,7 +173,11 @@
+                 endinfo = png_create_info_struct(png);
+ 
+                 fin.read((char*)header,8);
+-                if (fin.gcount() == 8 && png_check_sig(header, 8))
++		#if PNG_LIBPNG_VER < 10400
++			if (fin.gcount() == 8 && png_check_sig(header, 8))
++                #else
++			if (fin.gcount() == 8 && png_sig_cmp(header, 0, 8))
++                #endif
+                     png_set_read_fn(png,&fin,png_read_istream); //Use custom read function that will get data from istream
+                 else
+                 {
+@@ -224,7 +228,11 @@
+                 if (color == PNG_COLOR_TYPE_PALETTE)
+                     png_set_palette_to_rgb(png);
+                 if (color == PNG_COLOR_TYPE_GRAY && depth < 8)
+-                    png_set_gray_1_2_4_to_8(png);
++                   #if PNG_LIBPNG_VER < 10400
++                       png_set_gray_1_2_4_to_8(png);
++                   #else
++                       png_set_expand_gray_1_2_4_to_8(png);
++                   #endif
+                 if (png_get_valid(png, info, PNG_INFO_tRNS))
+                     png_set_tRNS_to_alpha(png);
+ 
