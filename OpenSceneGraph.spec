@@ -9,6 +9,7 @@ Source0:	http://www.openscenegraph.org/downloads/developer_releases/%{name}-%{ve
 # Source0-md5:	99d0b37f403b85b4559514b6b9849d9e
 #Source1:	osg-doxygen-0.9.1.tar.gz
 ## Source1-md5:	7e6d785d1b763aaeae03c2dc4c148805
+Patch0:		%{name}-libpng.patch
 URL:		http://www.openscenegraph.org/projects/osg/
 BuildRequires:	cairo-devel
 BuildRequires:	cmake
@@ -73,6 +74,7 @@ Wtyczki dla biblioteki Open Scene Graph.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 install -d build
