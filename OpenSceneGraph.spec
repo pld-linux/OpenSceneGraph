@@ -1,12 +1,12 @@
 Summary:	Open Scene Graph - real-time visualization library
 Summary(pl.UTF-8):	Open Scene Graph - biblioteka do wizualizacji
 Name:		OpenSceneGraph
-Version:	2.9.7
+Version:	2.9.9
 Release:	0.beta.1
 License:	OpenSceneGraph Public Licence (based on LGPL with exceptions)
 Group:		X11/Libraries
 Source0:	http://www.openscenegraph.org/downloads/developer_releases/%{name}-%{version}.zip
-# Source0-md5:	b5118ed07ec2945e23ad5e880f3f0f6d
+# Source0-md5:	0d18aa6ccb8f0fc75ed7ebec1ac3b010
 #Source1:	osg-doxygen-0.9.1.tar.gz
 ## Source1-md5:	7e6d785d1b763aaeae03c2dc4c148805
 URL:		http://www.openscenegraph.org/projects/osg/
@@ -103,37 +103,39 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libOpenThreads.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libOpenThreads.so.12
 %attr(755,root,root) %{_libdir}/libosg.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libosg.so.63
+%attr(755,root,root) %ghost %{_libdir}/libosg.so.66
 %attr(755,root,root) %{_libdir}/libosgAnimation.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libosgAnimation.so.63
+%attr(755,root,root) %ghost %{_libdir}/libosgAnimation.so.66
 %attr(755,root,root) %{_libdir}/libosgDB.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libosgDB.so.63
+%attr(755,root,root) %ghost %{_libdir}/libosgDB.so.66
 %attr(755,root,root) %{_libdir}/libosgFX.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libosgFX.so.63
+%attr(755,root,root) %ghost %{_libdir}/libosgFX.so.66
 %attr(755,root,root) %{_libdir}/libosgGA.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libosgGA.so.63
+%attr(755,root,root) %ghost %{_libdir}/libosgGA.so.66
 %attr(755,root,root) %{_libdir}/libosgManipulator.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libosgManipulator.so.63
+%attr(755,root,root) %ghost %{_libdir}/libosgManipulator.so.66
 %attr(755,root,root) %{_libdir}/libosgParticle.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libosgParticle.so.63
+%attr(755,root,root) %ghost %{_libdir}/libosgParticle.so.66
 %attr(755,root,root) %{_libdir}/libosgPresentation.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libosgPresentation.so.63
+%attr(755,root,root) %ghost %{_libdir}/libosgPresentation.so.66
 %attr(755,root,root) %{_libdir}/libosgShadow.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libosgShadow.so.63
+%attr(755,root,root) %ghost %{_libdir}/libosgQt.so.66
+%attr(755,root,root) %{_libdir}/libosgQt.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libosgShadow.so.66
 %attr(755,root,root) %{_libdir}/libosgSim.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libosgSim.so.63
+%attr(755,root,root) %ghost %{_libdir}/libosgSim.so.66
 %attr(755,root,root) %{_libdir}/libosgTerrain.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libosgTerrain.so.63
+%attr(755,root,root) %ghost %{_libdir}/libosgTerrain.so.66
 %attr(755,root,root) %{_libdir}/libosgText.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libosgText.so.63
+%attr(755,root,root) %ghost %{_libdir}/libosgText.so.66
 %attr(755,root,root) %{_libdir}/libosgUtil.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libosgUtil.so.63
+%attr(755,root,root) %ghost %{_libdir}/libosgUtil.so.66
 %attr(755,root,root) %{_libdir}/libosgViewer.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libosgViewer.so.63
+%attr(755,root,root) %ghost %{_libdir}/libosgViewer.so.66
 %attr(755,root,root) %{_libdir}/libosgVolume.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libosgVolume.so.63
+%attr(755,root,root) %ghost %{_libdir}/libosgVolume.so.66
 %attr(755,root,root) %{_libdir}/libosgWidget.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libosgWidget.so.63
+%attr(755,root,root) %ghost %{_libdir}/libosgWidget.so.66
 
 %files plugins
 %defattr(644,root,root,755)
@@ -151,6 +153,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libosgManipulator.so
 %attr(755,root,root) %{_libdir}/libosgParticle.so
 %attr(755,root,root) %{_libdir}/libosgPresentation.so
+%attr(755,root,root) %{_libdir}/libosgQt.so
 %attr(755,root,root) %{_libdir}/libosgShadow.so
 %attr(755,root,root) %{_libdir}/libosgSim.so
 %attr(755,root,root) %{_libdir}/libosgTerrain.so
@@ -167,9 +170,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_pkgconfigdir}/openscenegraph-osgDB.pc
 %{_pkgconfigdir}/openscenegraph-osgFX.pc
 %{_pkgconfigdir}/openscenegraph-osgGA.pc
-%{_pkgconfigdir}/openscenegraph-osgIntrospection.pc
 %{_pkgconfigdir}/openscenegraph-osgManipulator.pc
 %{_pkgconfigdir}/openscenegraph-osgParticle.pc
+%{_pkgconfigdir}/openscenegraph-osgQt.pc
 %{_pkgconfigdir}/openscenegraph-osgShadow.pc
 %{_pkgconfigdir}/openscenegraph-osgSim.pc
 %{_pkgconfigdir}/openscenegraph-osgTerrain.pc
