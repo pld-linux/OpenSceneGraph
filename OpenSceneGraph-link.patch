@@ -1,0 +1,11 @@
+--- OpenSceneGraph-2.9.10/src/osgViewer/CMakeLists.txt~	2010-12-02 15:20:52.000000000 +0100
++++ OpenSceneGraph-2.9.10/src/osgViewer/CMakeLists.txt	2010-12-07 14:14:44.068863667 +0100
+@@ -186,7 +186,7 @@
+             SET(LIB_PRIVATE_HEADERS ${LIB_PRIVATE_HEADERS} ${XRANDR_INCLUDE_DIRS} )
+ 
+             IF(X11_Xrandr_LIB)
+-                SET(LIB_EXTRA_LIBS ${X11_Xrandr_LIB} ${LIB_EXTRA_LIBS})
++                SET(LIB_EXTRA_LIBS -lX11 ${X11_Xrandr_LIB} ${LIB_EXTRA_LIBS})
+             ELSE()
+                 SET(LIB_EXTRA_LIBS ${XRANDR_LIBRARIES} ${LIB_EXTRA_LIBS})
+             ENDIF()
