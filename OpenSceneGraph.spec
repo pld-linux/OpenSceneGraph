@@ -1,12 +1,12 @@
 Summary:	Open Scene Graph - real-time visualization library
 Summary(pl.UTF-8):	Open Scene Graph - biblioteka do wizualizacji
 Name:		OpenSceneGraph
-Version:	2.9.10
+Version:	2.9.11
 Release:	0.beta.1
 License:	OpenSceneGraph Public Licence (based on LGPL with exceptions)
 Group:		X11/Libraries
 Source0:	http://www.openscenegraph.org/downloads/developer_releases/%{name}-%{version}.zip
-# Source0-md5:	b07359177cf619cf0d3f7a6dbd30323f
+# Source0-md5:	98cd9b63b4c2648caaa2e03321288b07
 #Source1:	osg-doxygen-0.9.1.tar.gz
 ## Source1-md5:	7e6d785d1b763aaeae03c2dc4c148805
 Patch0:		%{name}-link.patch
@@ -87,7 +87,7 @@ cd build
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
-cp -r examples/osg* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
+cp -a examples/osg* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 %{__make} -C build install \
 	DESTDIR=$RPM_BUILD_ROOT
@@ -103,39 +103,39 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libOpenThreads.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libOpenThreads.so.12
 %attr(755,root,root) %{_libdir}/libosg.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libosg.so.68
+%attr(755,root,root) %ghost %{_libdir}/libosg.so.71
 %attr(755,root,root) %{_libdir}/libosgAnimation.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libosgAnimation.so.68
+%attr(755,root,root) %ghost %{_libdir}/libosgAnimation.so.71
 %attr(755,root,root) %{_libdir}/libosgDB.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libosgDB.so.68
+%attr(755,root,root) %ghost %{_libdir}/libosgDB.so.71
 %attr(755,root,root) %{_libdir}/libosgFX.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libosgFX.so.68
+%attr(755,root,root) %ghost %{_libdir}/libosgFX.so.71
 %attr(755,root,root) %{_libdir}/libosgGA.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libosgGA.so.68
+%attr(755,root,root) %ghost %{_libdir}/libosgGA.so.71
 %attr(755,root,root) %{_libdir}/libosgManipulator.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libosgManipulator.so.68
+%attr(755,root,root) %ghost %{_libdir}/libosgManipulator.so.71
 %attr(755,root,root) %{_libdir}/libosgParticle.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libosgParticle.so.68
+%attr(755,root,root) %ghost %{_libdir}/libosgParticle.so.71
 %attr(755,root,root) %{_libdir}/libosgPresentation.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libosgPresentation.so.68
+%attr(755,root,root) %ghost %{_libdir}/libosgPresentation.so.71
 %attr(755,root,root) %{_libdir}/libosgShadow.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libosgQt.so.68
+%attr(755,root,root) %ghost %{_libdir}/libosgQt.so.71
 %attr(755,root,root) %{_libdir}/libosgQt.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libosgShadow.so.68
+%attr(755,root,root) %ghost %{_libdir}/libosgShadow.so.71
 %attr(755,root,root) %{_libdir}/libosgSim.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libosgSim.so.68
+%attr(755,root,root) %ghost %{_libdir}/libosgSim.so.71
 %attr(755,root,root) %{_libdir}/libosgTerrain.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libosgTerrain.so.68
+%attr(755,root,root) %ghost %{_libdir}/libosgTerrain.so.71
 %attr(755,root,root) %{_libdir}/libosgText.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libosgText.so.68
+%attr(755,root,root) %ghost %{_libdir}/libosgText.so.71
 %attr(755,root,root) %{_libdir}/libosgUtil.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libosgUtil.so.68
+%attr(755,root,root) %ghost %{_libdir}/libosgUtil.so.71
 %attr(755,root,root) %{_libdir}/libosgViewer.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libosgViewer.so.68
+%attr(755,root,root) %ghost %{_libdir}/libosgViewer.so.71
 %attr(755,root,root) %{_libdir}/libosgVolume.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libosgVolume.so.68
+%attr(755,root,root) %ghost %{_libdir}/libosgVolume.so.71
 %attr(755,root,root) %{_libdir}/libosgWidget.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libosgWidget.so.68
+%attr(755,root,root) %ghost %{_libdir}/libosgWidget.so.71
 
 %files plugins
 %defattr(644,root,root,755)
