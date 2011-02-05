@@ -61,7 +61,7 @@ Przykłady dla biblioteki Open Scene Graph.
 
 %package plugins
 Summary:	Plugins for Open Scene Graph
-Summary(pl):	Wtyczki dla biblioteki Open Scene Graph
+Summary(pl.UTF-8):	Wtyczki dla biblioteki Open Scene Graph
 Group:		Libraries
 Requires:	%{name} = %{version}-%{release}
 
