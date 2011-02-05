@@ -68,7 +68,7 @@ Requires:	%{name} = %{version}-%{release}
 %description plugins
 Plugins for Open Scene Graph library.
 
-%description plugins -l pl
+%description plugins -l pl.UTF-8
 Wtyczki dla biblioteki Open Scene Graph.
 
 %prep
