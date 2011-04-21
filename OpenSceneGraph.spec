@@ -5,7 +5,7 @@ Version:	2.8.4
 Release:	0.1
 License:	OpenSceneGraph Public Licence (based on LGPL with exceptions)
 Group:		X11/Libraries
-Source0:	http://www.openscenegraph.org/downloads/developer_releases/%{name}-%{version}.zip
+Source0:	http://www.openscenegraph.org/downloads/stable_releases/OpenSceneGraph-2.8.4/source/%{name}-%{version}.zip
 # Source0-md5:	283215b4040f7c5b85d30862a8eba97c
 #Source1:	osg-doxygen-0.9.1.tar.gz
 ## Source1-md5:	7e6d785d1b763aaeae03c2dc4c148805
