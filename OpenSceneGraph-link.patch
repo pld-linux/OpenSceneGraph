@@ -1,0 +1,21 @@
+--- OpenSceneGraph-2.8.4/CMakeLists.txt~	2011-04-07 03:58:09.000000000 +0200
++++ OpenSceneGraph-2.8.4/CMakeLists.txt	2011-04-21 13:05:37.905970129 +0200
+@@ -153,6 +153,7 @@
+     FIND_PACKAGE(X11)
+     # Some Unicies need explicit linkage to the Math library or the build fails.
+     FIND_LIBRARY(MATH_LIBRARY m)
++    FIND_LIBRARY(DL_LIBRARY dl)
+ ENDIF(UNIX)
+ 
+ # Make the headers visible to everything
+--- OpenSceneGraph-2.8.4/src/osg/CMakeLists.txt~	2010-03-17 18:41:14.000000000 +0100
++++ OpenSceneGraph-2.8.4/src/osg/CMakeLists.txt	2011-04-21 13:06:14.552636208 +0200
+@@ -326,7 +326,7 @@
+ LINK_INTERNAL(${LIB_NAME}     
+     OpenThreads
+ )
+-LINK_EXTERNAL(${LIB_NAME} ${CMAKE_THREAD_LIBS_INIT}    ${MATH_LIBRARY} )
++LINK_EXTERNAL(${LIB_NAME} ${CMAKE_THREAD_LIBS_INIT}    ${MATH_LIBRARY} ${DL_LIBRARY})
+ LINK_CORELIB_DEFAULT(${LIB_NAME} ${CMAKE_THREAD_LIBS_INIT} ${MATH_LIBRARY} )
+ 
+ INCLUDE(ModuleInstall OPTIONAL)
