@@ -1,14 +1,15 @@
 Summary:	Open Scene Graph - real-time visualization library
 Summary(pl.UTF-8):	Open Scene Graph - biblioteka do wizualizacji
 Name:		OpenSceneGraph
-Version:	2.8.3
+Version:	2.8.4
 Release:	0.1
 License:	OpenSceneGraph Public Licence (based on LGPL with exceptions)
 Group:		X11/Libraries
 Source0:	http://www.openscenegraph.org/downloads/developer_releases/%{name}-%{version}.zip
-# Source0-md5:	29f548b816bdd3bda484cc3d163784f5
+# Source0-md5:	283215b4040f7c5b85d30862a8eba97c
 #Source1:	osg-doxygen-0.9.1.tar.gz
 ## Source1-md5:	7e6d785d1b763aaeae03c2dc4c148805
+Patch0:		%{name}-link.patch
 URL:		http://www.openscenegraph.org/projects/osg/
 BuildRequires:	cairo-devel
 BuildRequires:	cmake
@@ -22,6 +23,7 @@ BuildRequires:	librsvg-devel
 BuildRequires:	libtiff-devel
 BuildRequires:	pkgconfig
 BuildRequires:	poppler-glib-devel
+BuildRequires:	rpmbuild(macros) >= 1.600
 BuildRequires:	unzip
 #BuildRequires:	xulrunner-devel
 BuildRequires:	zlib-devel
@@ -73,21 +75,19 @@ Wtyczki dla biblioteki Open Scene Graph.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 install -d build
 cd build
-%cmake .. \
-	-DCMAKE_BUILD_TYPE=None \
-	-DCMAKE_INSTALL_PREFIX=%{_prefix} \
-	-DCMAKE_VERBOSE_MAKEFILE=ON
+%cmake ..
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
-cp -r examples/osg* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
+cp -a examples/osg* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 %{__make} -C build install \
 	DESTDIR=$RPM_BUILD_ROOT
