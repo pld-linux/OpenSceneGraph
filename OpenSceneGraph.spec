@@ -101,37 +101,41 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libOpenThreads.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libOpenThreads.so.11
+%attr(755,root,root) %ghost %{_libdir}/libOpenThreads.so.12
 %attr(755,root,root) %{_libdir}/libosg.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libosg.so.65
+%attr(755,root,root) %ghost %{_libdir}/libosg.so.80
 %attr(755,root,root) %{_libdir}/libosgAnimation.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libosgAnimation.so.65
+%attr(755,root,root) %ghost %{_libdir}/libosgAnimation.so.80
 %attr(755,root,root) %{_libdir}/libosgDB.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libosgDB.so.65
+%attr(755,root,root) %ghost %{_libdir}/libosgDB.so.80
 %attr(755,root,root) %{_libdir}/libosgFX.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libosgFX.so.65
+%attr(755,root,root) %ghost %{_libdir}/libosgFX.so.80
 %attr(755,root,root) %{_libdir}/libosgGA.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libosgGA.so.65
+%attr(755,root,root) %ghost %{_libdir}/libosgGA.so.80
 %attr(755,root,root) %{_libdir}/libosgManipulator.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libosgManipulator.so.65
+%attr(755,root,root) %ghost %{_libdir}/libosgManipulator.so.80
 %attr(755,root,root) %{_libdir}/libosgParticle.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libosgParticle.so.65
+%attr(755,root,root) %ghost %{_libdir}/libosgParticle.so.80
+%attr(755,root,root) %{_libdir}/libosgPresentation.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libosgPresentation.so.80
+%attr(755,root,root) %{_libdir}/libosgQt.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libosgQt.so.80
 %attr(755,root,root) %{_libdir}/libosgShadow.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libosgShadow.so.65
+%attr(755,root,root) %ghost %{_libdir}/libosgShadow.so.80
 %attr(755,root,root) %{_libdir}/libosgSim.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libosgSim.so.65
+%attr(755,root,root) %ghost %{_libdir}/libosgSim.so.80
 %attr(755,root,root) %{_libdir}/libosgTerrain.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libosgTerrain.so.65
+%attr(755,root,root) %ghost %{_libdir}/libosgTerrain.so.80
 %attr(755,root,root) %{_libdir}/libosgText.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libosgText.so.65
+%attr(755,root,root) %ghost %{_libdir}/libosgText.so.80
 %attr(755,root,root) %{_libdir}/libosgUtil.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libosgUtil.so.65
+%attr(755,root,root) %ghost %{_libdir}/libosgUtil.so.80
 %attr(755,root,root) %{_libdir}/libosgViewer.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libosgViewer.so.65
+%attr(755,root,root) %ghost %{_libdir}/libosgViewer.so.80
 %attr(755,root,root) %{_libdir}/libosgVolume.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libosgVolume.so.65
+%attr(755,root,root) %ghost %{_libdir}/libosgVolume.so.80
 %attr(755,root,root) %{_libdir}/libosgWidget.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libosgWidget.so.65
+%attr(755,root,root) %ghost %{_libdir}/libosgWidget.so.80
 
 %files plugins
 %defattr(644,root,root,755)
@@ -148,6 +152,8 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libosgGA.so
 %attr(755,root,root) %{_libdir}/libosgManipulator.so
 %attr(755,root,root) %{_libdir}/libosgParticle.so
+%attr(755,root,root) %{_libdir}/libosgPresentation.so
+%attr(755,root,root) %{_libdir}/libosgQt.so
 %attr(755,root,root) %{_libdir}/libosgShadow.so
 %attr(755,root,root) %{_libdir}/libosgSim.so
 %attr(755,root,root) %{_libdir}/libosgTerrain.so
