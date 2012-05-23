@@ -166,6 +166,22 @@ rm -rf $RPM_BUILD_ROOT
 %{_includedir}/osg*
 %{_pkgconfigdir}/openscenegraph.pc
 %{_pkgconfigdir}/openthreads.pc
+%{_pkgconfigdir}/openscenegraph-osg.pc
+%{_pkgconfigdir}/openscenegraph-osgAnimation.pc
+%{_pkgconfigdir}/openscenegraph-osgDB.pc
+%{_pkgconfigdir}/openscenegraph-osgFX.pc
+%{_pkgconfigdir}/openscenegraph-osgGA.pc
+%{_pkgconfigdir}/openscenegraph-osgManipulator.pc
+%{_pkgconfigdir}/openscenegraph-osgParticle.pc
+%{_pkgconfigdir}/openscenegraph-osgQt.pc
+%{_pkgconfigdir}/openscenegraph-osgShadow.pc
+%{_pkgconfigdir}/openscenegraph-osgSim.pc
+%{_pkgconfigdir}/openscenegraph-osgTerrain.pc
+%{_pkgconfigdir}/openscenegraph-osgText.pc
+%{_pkgconfigdir}/openscenegraph-osgUtil.pc
+%{_pkgconfigdir}/openscenegraph-osgViewer.pc
+%{_pkgconfigdir}/openscenegraph-osgVolume.pc
+%{_pkgconfigdir}/openscenegraph-osgWidget.pc
 
 %files examples
 %defattr(644,root,root,755)
