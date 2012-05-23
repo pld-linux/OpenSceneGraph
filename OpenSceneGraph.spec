@@ -9,7 +9,7 @@ Source0:	http://www.openscenegraph.org/downloads/stable_releases/OpenSceneGraph-
 # Source0-md5:	c43a25d023e635c3566b2083d8e6d956
 #Source1:	osg-doxygen-0.9.1.tar.gz
 ## Source1-md5:	7e6d785d1b763aaeae03c2dc4c148805
-Patch0:		%{name}-link.patch
+Patch0:		xine12.patch
 URL:		http://www.openscenegraph.org/projects/osg/
 BuildRequires:	cairo-devel
 BuildRequires:	cmake
