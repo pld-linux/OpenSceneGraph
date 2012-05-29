@@ -11,6 +11,8 @@ Source0:	http://www.openscenegraph.org/downloads/stable_releases/OpenSceneGraph-
 ## Source1-md5:	7e6d785d1b763aaeae03c2dc4c148805
 Patch0:		xine12.patch
 URL:		http://www.openscenegraph.org/projects/osg/
+BuildRequires:	QtCore-devel
+BuildRequires:	QtOpenGL-devel
 BuildRequires:	cairo-devel
 BuildRequires:	cmake
 BuildRequires:	freetype-devel
@@ -23,6 +25,8 @@ BuildRequires:	librsvg-devel
 BuildRequires:	libtiff-devel
 BuildRequires:	pkgconfig
 BuildRequires:	poppler-glib-devel
+BuildRequires:	qt4-build
+BuildRequires:	qt4-qmake
 BuildRequires:	rpmbuild(macros) >= 1.600
 BuildRequires:	unzip
 #BuildRequires:	xulrunner-devel
