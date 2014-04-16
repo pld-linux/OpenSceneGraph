@@ -82,7 +82,9 @@ Wtyczki dla biblioteki Open Scene Graph.
 %build
 install -d build
 cd build
-%cmake ..
+%cmake \
+	-DDESIRED_QT_VERSION=4 \
+	../
 %{__make}
 
 %install
