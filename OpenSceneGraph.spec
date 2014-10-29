@@ -134,6 +134,8 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %ghost %{_libdir}/libosgTerrain.so.112
 %attr(755,root,root) %{_libdir}/libosgText.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libosgText.so.112
+%attr(755,root,root) %{_libdir}/libosgUI.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libosgUI.so.112
 %attr(755,root,root) %{_libdir}/libosgUtil.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libosgUtil.so.112
 %attr(755,root,root) %{_libdir}/libosgViewer.so.*.*.*
@@ -164,6 +166,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libosgSim.so
 %attr(755,root,root) %{_libdir}/libosgTerrain.so
 %attr(755,root,root) %{_libdir}/libosgText.so
+%attr(755,root,root) %{_libdir}/libosgUI.so
 %attr(755,root,root) %{_libdir}/libosgUtil.so
 %attr(755,root,root) %{_libdir}/libosgViewer.so
 %attr(755,root,root) %{_libdir}/libosgVolume.so
