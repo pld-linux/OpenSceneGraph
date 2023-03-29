@@ -1,0 +1,11 @@
+--- OpenSceneGraph-3.5.1/src/osgPlugins/RestHttpDevice/server.cpp.orig	2013-06-19 19:25:55.000000000 +0200
++++ OpenSceneGraph-3.5.1/src/osgPlugins/RestHttpDevice/server.cpp	2023-03-29 21:53:19.150878828 +0200
+@@ -23,7 +23,7 @@ server::server(const std::string& addres
+     request_handler_(doc_root)
+ {
+   // Open the acceptor with the option to reuse the address (i.e. SO_REUSEADDR).
+-  asio::ip::tcp::resolver resolver(acceptor_.get_io_service());
++  asio::ip::tcp::resolver resolver((asio::io_context&)acceptor_.get_executor().context());
+   asio::ip::tcp::resolver::query query(address, port);
+   asio::ip::tcp::endpoint endpoint = *resolver.resolve(query);
+   acceptor_.open(endpoint.protocol());

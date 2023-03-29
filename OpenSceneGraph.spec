@@ -10,9 +10,12 @@ Source0:	http://trac.openscenegraph.org/downloads/developer_releases/%{name}-%{v
 #Source1:	osg-doxygen-0.9.1.tar.gz
 ## Source1-md5:	7e6d785d1b763aaeae03c2dc4c148805
 Patch0:		ffmpeg3.patch
+Patch1:		%{name}-asio.patch
 URL:		http://www.openscenegraph.org/projects/osg/
 BuildRequires:	QtCore-devel
 BuildRequires:	QtOpenGL-devel
+BuildRequires:	asio-devel >= 1.11
+BuildRequires:	boost-devel >= 1.37
 BuildRequires:	cairo-devel
 BuildRequires:	cmake
 BuildRequires:	freetype-devel
@@ -82,10 +85,12 @@ Wtyczki dla biblioteki Open Scene Graph.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 install -d build
 cd build
+CXXFLAGS="%{rpmcxxflags} -DASIO_ENABLE_BOOST=1"
 %cmake \
 	-DDESIRED_QT_VERSION=4 \
 %ifarch x32
