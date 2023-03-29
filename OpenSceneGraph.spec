@@ -2,7 +2,7 @@ Summary:	Open Scene Graph - real-time visualization library
 Summary(pl.UTF-8):	Open Scene Graph - biblioteka do wizualizacji
 Name:		OpenSceneGraph
 Version:	3.5.1
-Release:	13
+Release:	14
 License:	OpenSceneGraph Public Licence (based on LGPL with exceptions)
 Group:		X11/Libraries
 Source0:	http://trac.openscenegraph.org/downloads/developer_releases/%{name}-%{version}.zip
@@ -12,8 +12,10 @@ Source0:	http://trac.openscenegraph.org/downloads/developer_releases/%{name}-%{v
 Patch0:		ffmpeg3.patch
 Patch1:		%{name}-asio.patch
 URL:		http://www.openscenegraph.org/projects/osg/
-BuildRequires:	QtCore-devel
-BuildRequires:	QtOpenGL-devel
+BuildRequires:	Qt5Core-devel >= 5
+BuildRequires:	Qt5Gui-devel >= 5
+BuildRequires:	Qt5OpenGL-devel >= 5
+BuildRequires:	Qt5Widgets-devel >= 5
 BuildRequires:	asio-devel >= 1.11
 BuildRequires:	boost-devel >= 1.37
 BuildRequires:	cairo-devel
@@ -28,8 +30,8 @@ BuildRequires:	librsvg-devel
 BuildRequires:	libtiff-devel
 BuildRequires:	pkgconfig
 BuildRequires:	poppler-glib-devel
-BuildRequires:	qt4-build
-BuildRequires:	qt4-qmake
+BuildRequires:	qt5-build >= 5
+BuildRequires:	qt5-qmake >= 5
 BuildRequires:	rpmbuild(macros) >= 1.600
 BuildRequires:	unzip
 #BuildRequires:	xulrunner-devel
@@ -92,7 +94,7 @@ install -d build
 cd build
 CXXFLAGS="%{rpmcxxflags} -DASIO_ENABLE_BOOST=1"
 %cmake \
-	-DDESIRED_QT_VERSION=4 \
+	-DDESIRED_QT_VERSION=5 \
 %ifarch x32
 	-DLIB_POSTFIX=x32 \
 %endif
