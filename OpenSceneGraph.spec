@@ -1,13 +1,14 @@
 # TODO: nvtt
 #
 # Conditional build:
-%bcond_with	fbx	# Autodesk FBX SDK support (proprietary)
+%bcond_with	fbx		# Autodesk FBX SDK support (proprietary)
+%bcond_with	ffmpeg		# FFmpeg support, needs ffmpeg < 5
 
 Summary:	Open Scene Graph - real-time visualization library
 Summary(pl.UTF-8):	Open Scene Graph - biblioteka do wizualizacji
 Name:		OpenSceneGraph
 Version:	3.6.5
-Release:	1
+Release:	2
 License:	OpenSceneGraph Public Licence (based on LGPL with exceptions)
 Group:		X11/Libraries
 #Source0Download: https://github.com/openscenegraph/OpenSceneGraph/releases
@@ -40,7 +41,7 @@ BuildRequires:	collada-dom-devel
 BuildRequires:	curl-devel
 BuildRequires:	dcmtk-devel
 %{?with_fbx:BuildRequires:	fbxsdk-devel}
-BuildRequires:	ffmpeg-devel
+%{?with_ffmpeg:BuildRequires:	ffmpeg-devel}
 BuildRequires:	fontconfig-devel
 BuildRequires:	freetype-devel >= 2
 BuildRequires:	gdal-devel
@@ -136,6 +137,7 @@ cd build
 %if "%{_lib}" == "libx32"
 	-DLIB_POSTFIX=x32 \
 %endif
+	%{!?with_ffmpeg:-DCMAKE_DISABLE_FIND_PACKAGE_FFmpeg=1} \
 	-DOSG_USE_LOCAL_LUA_SOURCE=OFF
 
 %{__make}
