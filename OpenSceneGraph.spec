@@ -8,7 +8,7 @@ Summary:	Open Scene Graph - real-time visualization library
 Summary(pl.UTF-8):	Open Scene Graph - biblioteka do wizualizacji
 Name:		OpenSceneGraph
 Version:	3.6.5
-Release:	2
+Release:	3
 License:	OpenSceneGraph Public Licence (based on LGPL with exceptions)
 Group:		X11/Libraries
 #Source0Download: https://github.com/openscenegraph/OpenSceneGraph/releases
@@ -23,7 +23,7 @@ Patch3:		%{name}-openexr3.patch
 URL:		https://www.openscenegraph.org/index.php/33-openscenegraph/4-front-page
 BuildRequires:	Coin-devel
 BuildRequires:	EGL-devel
-BuildRequires:	OpenCASCADE-devel
+BuildRequires:	OpenCASCADE-devel >= 7.8.0
 BuildRequires:	OpenEXR-devel
 BuildRequires:	OpenGL-devel >= 2
 BuildRequires:	Qt5Core-devel >= 5
