@@ -72,7 +72,7 @@ BuildRequires:	xorg-lib-libXrandr-devel
 BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		specflags	-std=c++11
+#define		specflags	-std=c++11
 
 %description
 The Open Scene Graph is a cross-platform C++/OpenGL library for the
