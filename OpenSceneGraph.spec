@@ -8,7 +8,7 @@ Summary:	Open Scene Graph - real-time visualization library
 Summary(pl.UTF-8):	Open Scene Graph - biblioteka do wizualizacji
 Name:		OpenSceneGraph
 Version:	3.6.5
-Release:	4
+Release:	5
 License:	OpenSceneGraph Public Licence (based on LGPL with exceptions)
 Group:		X11/Libraries
 #Source0Download: https://github.com/openscenegraph/OpenSceneGraph/releases
@@ -20,8 +20,10 @@ Patch1:		%{name}-OpenCASCADE.patch
 Patch2:		%{name}-gta.patch
 # https://src.fedoraproject.org/rpms/OpenSceneGraph/blob/rawhide/f/OpenSceneGraph-openexr3.patch
 Patch3:		%{name}-openexr3.patch
+Patch4:		boost-detect.patch
 URL:		https://www.openscenegraph.org/index.php/33-openscenegraph/4-front-page
 BuildRequires:	Coin-devel
+BuildRequires:	EGL-devel
 BuildRequires:	EGL-devel
 BuildRequires:	OpenCASCADE-devel >= 7.8.0
 BuildRequires:	OpenEXR-devel
@@ -30,9 +32,8 @@ BuildRequires:	Qt5Core-devel >= 5
 BuildRequires:	Qt5Gui-devel >= 5
 BuildRequires:	Qt5OpenGL-devel >= 5
 BuildRequires:	Qt5Widgets-devel >= 5
-BuildRequires:	SoXt-devel
-BuildRequires:	EGL-devel
 BuildRequires:	SDL2-devel >= 2
+BuildRequires:	SoXt-devel
 BuildRequires:	asio-devel >= 1.11
 BuildRequires:	boost-devel >= 1.37
 BuildRequires:	cairo-devel
@@ -121,10 +122,11 @@ Przykłady dla biblioteki Open Scene Graph.
 
 %prep
 %setup -q -n %{name}-%{name}-%{version}
-%patch0 -p1
-%patch1 -p1
-%patch2 -p1
-%patch3 -p1
+%patch -P 0 -p1
+%patch -P 1 -p1
+%patch -P 2 -p1
+%patch -P 3 -p1
+%patch -P 4 -p1
 
 %build
 install -d build
